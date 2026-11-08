@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hava Durumu</title>
+</head>
+<body>
+<main class="app">
+    <header class="app-header">
+        <h1>Hava Durumu</h1>
+    </header>
+
+    <form id="search" class="search" autocomplete="off">
+        <input id="city" name="city" type="text" placeholder="Şehir adı" minlength="2" maxlength="100" required>
+        <select id="days" name="days">
+            <option value="3">3 gün</option>
+            <option value="7" selected>7 gün</option>
+            <option value="14">14 gün</option>
+        </select>
+        <button type="submit">Getir</button>
+    </form>
+
+    <p id="error" class="error" role="alert" hidden></p>
+
+    <section id="result" class="result" hidden>
+        <h2 id="place"></h2>
+        <p id="current" class="current"></p>
+        <p id="details" class="details"></p>
+
+        <table class="daily">
+            <thead>
+            <tr>
+                <th>Tarih</th>
+                <th>Durum</th>
+                <th>En düşük</th>
+                <th>En yüksek</th>
+                <th>Yağış</th>
+            </tr>
+            </thead>
+            <tbody id="daily"></tbody>
+        </table>
+    </section>
+</main>
+
+<template id="day-template">
+    <tr>
+        <td class="date"></td>
+        <td class="desc"></td>
+        <td class="min"></td>
+        <td class="max"></td>
+        <td class="rain"></td>
+    </tr>
+</template>
+
+<script src="js/app.js"></script>
+</body>
+</html>

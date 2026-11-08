@@ -1,0 +1,21 @@
+@Weather_WebAPI_HostAddress = http://localhost:5147
+
+GET {{Weather_WebAPI_HostAddress}}/api/weather?city=Istanbul
+Accept: application/json
+
+###
+
+GET {{Weather_WebAPI_HostAddress}}/api/weather?city=Ankara&days=3
+Accept: application/json
+
+###
+
+GET {{Weather_WebAPI_HostAddress}}/api/weather/coordinates?latitude=38.42&longitude=27.14
+Accept: application/json
+
+###
+
+GET {{Weather_WebAPI_HostAddress}}/api/weather/locations?query=Izmir
+Accept: application/json
+
+###
