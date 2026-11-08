@@ -1,0 +1,38 @@
+@UrlShortener_WebAPI_HostAddress = http://localhost:5082
+
+GET {{UrlShortener_WebAPI_HostAddress}}/api/links
+Accept: application/json
+
+###
+
+POST {{UrlShortener_WebAPI_HostAddress}}/api/links
+Content-Type: application/json
+
+{
+  "url": "https://learn.microsoft.com/aspnet/core"
+}
+
+###
+
+POST {{UrlShortener_WebAPI_HostAddress}}/api/links
+Content-Type: application/json
+
+{
+  "url": "https://github.com",
+  "alias": "ghub"
+}
+
+###
+
+GET {{UrlShortener_WebAPI_HostAddress}}/api/links/ghub
+Accept: application/json
+
+###
+
+GET {{UrlShortener_WebAPI_HostAddress}}/ghub
+
+###
+
+DELETE {{UrlShortener_WebAPI_HostAddress}}/api/links/ghub
+
+###

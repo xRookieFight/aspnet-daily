@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Link Kısaltıcı</title>
+</head>
+<body>
+<main class="app">
+    <header class="app-header">
+        <h1>Link Kısaltıcı</h1>
+        <p id="summary" class="summary"></p>
+    </header>
+
+    <form id="new-link" class="new-link" autocomplete="off">
+        <input id="new-url" name="url" type="url" placeholder="https://..." maxlength="2048" required>
+        <input id="new-alias" name="alias" type="text" placeholder="Özel kod (isteğe bağlı)" maxlength="32" pattern="[A-Za-z0-9_\-]{3,32}">
+        <button type="submit">Kısalt</button>
+    </form>
+
+    <p id="error" class="error" role="alert" hidden></p>
+
+    <ul id="link-list" class="link-list"></ul>
+    <p id="empty" class="empty" hidden>Henüz link yok.</p>
+</main>
+
+<template id="link-template">
+    <li class="link">
+        <div class="body">
+            <a class="short" target="_blank" rel="noopener noreferrer"></a>
+            <span class="target"></span>
+            <span class="clicks"></span>
+        </div>
+        <div class="actions">
+            <button type="button" class="copy">Kopyala</button>
+            <button type="button" class="delete">Sil</button>
+        </div>
+    </li>
+</template>
+
+<script src="js/app.js"></script>
+</body>
+</html>
