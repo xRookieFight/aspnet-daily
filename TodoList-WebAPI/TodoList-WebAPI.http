@@ -1,0 +1,38 @@
+@TodoList_WebAPI_HostAddress = http://localhost:5081
+
+GET {{TodoList_WebAPI_HostAddress}}/api/todo
+Accept: application/json
+
+###
+
+GET {{TodoList_WebAPI_HostAddress}}/api/todo/1
+Accept: application/json
+
+###
+
+POST {{TodoList_WebAPI_HostAddress}}/api/todo
+Content-Type: application/json
+
+{
+  "title": "Buy milk",
+  "description": "2 liters",
+  "isCompleted": false
+}
+
+###
+
+PUT {{TodoList_WebAPI_HostAddress}}/api/todo/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Buy milk",
+  "description": "2 liters",
+  "isCompleted": true
+}
+
+###
+
+DELETE {{TodoList_WebAPI_HostAddress}}/api/todo/1
+
+###
